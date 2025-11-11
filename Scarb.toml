@@ -11,6 +11,7 @@ cairo_test = "2.11.4"
 
 [dependencies]
 cairo_execute = "2.11.4"
+alexandria_math = "0.5.2"
 
 [cairo]
 enable-gas = false

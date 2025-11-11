@@ -1,4 +1,1 @@
-#[executable]
-fn main() -> (){
-println!("Hello, World!");
-}
+mod felts;

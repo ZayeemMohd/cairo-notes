@@ -1,3 +1,5 @@
+// whenever we passes a struct to a function the ownership is moved to the function
+
 #[cfg(test)]
 
 mod tests {
@@ -21,11 +23,10 @@ mod tests {
 
         assert!(person.age == 23_u32); // this is aam zindagi
 
-        let age = get_age(person); // now we are storing the person.age in a variable called age
+        let age = get_age(person); // now we are passing person to the "get_age" function and storing the person.age in a variable called age
         assert!(age == 23_u32);
-        // Ye hai mentos zindagi
-
         // assert!(person.age == 23_32); // error: the variable is previously moved, Ownership concepts 😭
+        // Ye hai mentos zindagi
         // since when we called "let age = get_age(person);" we moved the ownership of person to the function get_age()
     }
 
@@ -62,8 +63,8 @@ mod tests {
 
         //  the function get_age_with_snapshot doesn't accept the actual struct directly instead it wants the refrence of it so we need to add "@"
         let age = get_age_with_snapshot(@person);
-        assert!(age == 23_u32);
-        assert!(person.age == 23_u32); // we access the property directly, therefore ownership doesn't moved
+        assert!(age == 22_u32);
+        assert!(person.age == 22_u32); // we access the property directly, therefore ownership doesn't moved
     }
 
 }

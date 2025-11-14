@@ -15,3 +15,6 @@ mod refrences; // 9
 mod copy_trait; // 10
 
 mod traits_and_generics; // 11    // factory pattern: struct -> trait -> impl
+mod constrains; //  12  you will get compiler issue if you use cairo version < cairo: 2.12.0
+
+mod arrays; // 13
